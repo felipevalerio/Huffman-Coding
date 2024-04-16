@@ -1,6 +1,10 @@
 #include <iostream>
 using namespace std;
 
+struct Letter_Frequency{
+
+};
+
 int main() {
 	// just a sentence to start, later on it will be a text file
 	string sentence = "o rato roeu a roupa do rei de roma";
