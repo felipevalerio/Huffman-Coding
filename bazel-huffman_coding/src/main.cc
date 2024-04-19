@@ -20,9 +20,9 @@ int main() {
 	for (auto i = 0; i < length; i++) {
 		for (auto j = 0; j < length; j++)
 			if (char_sentence[i] == char_sentence[j]) {
-				std::cout << "Encontrei uma segunda ocorrencia" << std::endl;
+				std::cout << "Sequencia encontrada: " << char_sentence[i] << " => " << char_sentence[j] << std::endl;
 			} else {
-				std::cout << "Somente uma ocorrencia" << std::endl;
+				std::cout << "Nao e uma sequencia: " << char_sentence[i] << " => " << char_sentence[j] << std::endl;
 			}
 	}
 
