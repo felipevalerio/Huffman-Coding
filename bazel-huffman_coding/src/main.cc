@@ -2,8 +2,10 @@
 using namespace std;
 
 struct Letter_Frequency{
-
+	int frequency;
+	char *letter;
 };
+
 
 int main() {
 	// just a sentence to start, later on it will be a text file
@@ -22,7 +24,7 @@ int main() {
 			if (char_sentence[i] == char_sentence[j]) {
 				std::cout << "Sequencia encontrada: " << char_sentence[i] << " => " << char_sentence[j] << std::endl;
 			} else {
-				std::cout << "Nao e uma sequencia: " << char_sentence[i] << " => " << char_sentence[j] << std::endl;
+				std::cout << "Somente uma ocorrencia: " << char_sentence[i] << " => " << char_sentence[j] << std::endl;
 			}
 	}
 
