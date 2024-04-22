@@ -1,9 +1,14 @@
 #include <iostream>
 using namespace std;
 
-struct Letter_Frequency{
+struct Node{
 	int frequency;
-	char *letter;
+	char letter;
+
+	Node* left;
+	Node* right;
+
+
 };
 
 
