@@ -8,7 +8,6 @@ struct Node{
 	Node* left;
 	Node* right;
 
-
 };
 
 
@@ -28,6 +27,7 @@ int main() {
 		for (auto j = 0; j < length; j++)
 			if (char_sentence[i] == char_sentence[j]) {
 				std::cout << "Sequencia encontrada: " << char_sentence[i] << " => " << char_sentence[j] << std::endl;
+				count = count + 1;
 			} else {
 				std::cout << "Somente uma ocorrencia: " << char_sentence[i] << " => " << char_sentence[j] << std::endl;
 			}
