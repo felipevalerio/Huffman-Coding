@@ -5,9 +5,8 @@ struct Node{
 	int frequency;
 	char letter;
 
-	Node* left;
-	Node* right;
-
+	struct Node* right;
+	struct Node* left;
 };
 
 
