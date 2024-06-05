@@ -10,6 +10,18 @@ struct Node{
 };
 
 
+Node *empty_node(int frequency, char letter) {
+
+	Node *root_node = (Node *)malloc(sizeof(Node));
+	root_node->frequency = frequency;
+	root_node->letter = letter;
+	root_node->left = NULL;
+	root_node->right = NULL;
+
+	return root_node;
+}
+
+
 int main() {
 	// just a sentence to start, later on it will be a text file
 	string sentence = "o rato roeu a roupa do rei de roma";
@@ -27,8 +39,10 @@ int main() {
 			if (char_sentence[i] == char_sentence[j]) {
 				std::cout << "Sequencia encontrada: " << char_sentence[i] << " => " << char_sentence[j] << std::endl;
 				count = count + 1;
+				empty_node(count, char_sentence[i]);
 			} else {
 				std::cout << "Somente uma ocorrencia: " << char_sentence[i] << " => " << char_sentence[j] << std::endl;
+				empty_node(0, char_sentence[i]);
 			}
 	}
 
