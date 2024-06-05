@@ -21,6 +21,19 @@ Node *empty_node(int frequency, char letter) {
 	return root_node;
 }
 
+Node *insert(Node *root_node, int frequency, char letter) {
+
+	if (root_node == NULL) { return empty_node(frequency, letter); } 
+	
+	if (frequency < root_node->frequency) {
+			root_node->left = insert(root_node->left, frequency, letter);
+	} else {
+			root_node->right = insert(root_node->right, frequency, letter);
+	}
+	
+	return root_node;
+}
+
 
 int main() {
 	// just a sentence to start, later on it will be a text file
@@ -39,10 +52,10 @@ int main() {
 			if (char_sentence[i] == char_sentence[j]) {
 				std::cout << "Sequencia encontrada: " << char_sentence[i] << " => " << char_sentence[j] << std::endl;
 				count = count + 1;
-				empty_node(count, char_sentence[i]);
+				// empty_node(count, char_sentence[i]);
 			} else {
 				std::cout << "Somente uma ocorrencia: " << char_sentence[i] << " => " << char_sentence[j] << std::endl;
-				empty_node(0, char_sentence[i]);
+				// empty_node(0, char_sentence[i]);
 			}
 	}
 
