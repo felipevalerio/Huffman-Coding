@@ -35,7 +35,20 @@ Node *insert(Node *root_node, int frequency, char letter) {
 }
 
 
+void print_in_order(Node *root) {
+	
+	if (root != NULL) {
+		print_in_order(root->left);
+		std::cout << root->frequency << "=>" << root->letter << std::endl;
+		print_in_order(root->right);
+	}
+}
+
+
 int main() {
+
+	Node *root = NULL;
+
 	// just a sentence to start, later on it will be a text file
 	string sentence = "o rato roeu a roupa do rei de roma";
 	auto count = 0;
@@ -50,14 +63,16 @@ int main() {
 	for (auto i = 0; i < length; i++) {
 		for (auto j = 0; j < length; j++)
 			if (char_sentence[i] == char_sentence[j]) {
-				std::cout << "Sequencia encontrada: " << char_sentence[i] << " => " << char_sentence[j] << std::endl;
 				count = count + 1;
-				// empty_node(count, char_sentence[i]);
+				root = insert(root, count, char_sentence[i]);
 			} else {
-				std::cout << "Somente uma ocorrencia: " << char_sentence[i] << " => " << char_sentence[j] << std::endl;
-				// empty_node(0, char_sentence[i]);
+				root = insert(root, 0, char_sentence[i]);
 			}
 	}
+
+	std::cout << "Print: " << std::endl;
+	print_in_order(root);
+
 
 	return 0;
 }
